@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Akshaya Enterprises | Electrical & Plumbing Services</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            color: #222;
+            background: #f7f9fc;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: #0b1f3a;
+            color: white;
+            padding: 15px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #ffcc00;
+        }
+
+        .logo span {
+            color: white;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #ffcc00;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 85vh;
+            background:
+                linear-gradient(rgba(11, 31, 58, 0.82), rgba(11, 31, 58, 0.82)),
+                linear-gradient(135deg, #0b1f3a, #164e8a);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 40px 20px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #ffcc00;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            color: #e5e5e5;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 25px;
+            border-radius: 7px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 5px;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: #ffcc00;
+            color: #111;
+        }
+
+        .btn-primary:hover {
+            background: #e6b800;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: #0b1f3a;
+        }
+
+        /* General */
+        section {
+            padding: 70px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 35px;
+            color: #0b1f3a;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #666;
+        }
+
+        /* About */
+        .about {
+            background: white;
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about-content p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        /* Services */
+        .services {
+            background: #f7f9fc;
+        }
+
+        .service-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .service-card {
+            background: white;
+            padding: 35px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .service-icon {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+        .service-card h3 {
+            color: #0b1f3a;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .service-card ul {
+            list-style: none;
+            color: #555;
+        }
+
+        .service-card li {
+            margin: 8px 0;
+        }
+
+        .service-card li::before {
+            content: "✓ ";
+            color: #16a34a;
+            font-weight: bold;
+        }
+
+        /* Why Choose Us */
+        .why-us {
+            background: #0b1f3a;
+            color: white;
+        }
+
+        .why-us .section-title h2 {
+            color: white;
+        }
+
+        .why-us .section-title p {
+            color: #ccc;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 25px;
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .feature h3 {
+            margin-bottom: 8px;
+            color: #ffcc00;
+        }
+
+        .feature p {
+            color: #ddd;
+        }
+
+        /* Contact */
+        .contact {
+            background: white;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .contact-info {
+            padding: 20px;
+        }
+
+        .contact-info h3 {
+            color: #0b1f3a;
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+
+        .contact-item {
+            margin: 20px 0;
+        }
+
+        .contact-item strong {
+            display: block;
+            color: #0b1f3a;
+            margin-bottom: 5px;
+        }
+
+        .contact-item a {
+            color: #555;
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            color: #164e8a;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: #f7f9fc;
+            padding: 30px;
+            border-radius: 12px;
+        }
+
+        .contact-form h3 {
+            color: #0b1f3a;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            outline: none;
+            font-size: 15px;
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #164e8a;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 13px;
+            border: none;
+            background: #0b1f3a;
+            color: white;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background: #164e8a;
+        }
+
+        /* Footer */
+        footer {
+            background: #071426;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        footer span {
+            color: #ffcc00;
+        }
+
+        /* Floating WhatsApp */
+        .whatsapp {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            background: #25D366;
+            color: white;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            font-size: 27px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            z-index: 999;
+        }
+
+        .whatsapp:hover {
+            transform: scale(1.1);
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+
+            header {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav a {
+                margin: 0 7px;
+                font-size: 14px;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .service-container {
+                grid-template-columns: 1fr;
+            }
+
+            .features {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 50px 5%;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+
+        <div class="logo">
+            Akshaya <span>Enterprises</span>
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+    </header>
+
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <h1>
+                Akshaya <span>Enterprises</span>
+            </h1>
+
+            <p>
+                Professional Electrical & Plumbing Services
+            </p>
+
+            <p>
+                Reliable solutions for your home, office and commercial requirements.
+            </p>
+
+            <a href="#contact" class="btn btn-primary">
+                Book a Service
+            </a>
+
+            <a href="tel:+919999999999" class="btn btn-secondary">
+                Call Now
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- About -->
+    <section class="about" id="about">
+
+        <div class="section-title">
+            <h2>About Us</h2>
+            <p>Reliable service you can count on</p>
+        </div>
+
+        <div class="about-content">
+
+            <p>
+                <strong>Akshaya Enterprises</strong> provides professional
+                electrical and plumbing services for homes, offices,
+                shops and commercial properties.
+            </p>
+
+            <p>
+                Our focus is on quality workmanship, reliable service and
+                customer satisfaction. Whether you need an electrical repair,
+                installation, plumbing repair or maintenance, our team is
+                ready to help.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Services -->
+    <section class="services" id="services">
+
+        <div class="section-title">
+
+            <h2>Our Services</h2>
+
+            <p>
+                Electrical and plumbing solutions for your everyday needs
+            </p>
+
+        </div>
+
+
+        <div class="service-container">
+
+            <!-- Electrical -->
+            <div class="service-card">
+
+                <div class="service-icon">⚡</div>
+
+                <h3>Electrical Services</h3>
+
+                <p>
+                    Professional electrical installation, repair and
+                    maintenance services.
+                </p>
+
+                <ul>
+                    <li>Electrical Wiring</li>
+                    <li>Switch & Socket Repair</li>
+                    <li>Light Installation</li>
+                    <li>Fan Installation & Repair</li>
+                    <li>MCB & DB Installation</li>
+                    <li>Electrical Maintenance</li>
+                </ul>
+
+            </div>
+
+
+            <!-- Plumbing -->
+            <div class="service-card">
+
+                <div class="service-icon">🔧</div>
+
+                <h3>Plumbing Services</h3>
+
+                <p>
+                    Reliable plumbing solutions for residential and
+                    commercial requirements.
+                </p>
+
+                <ul>
+                    <li>Pipe Leakage Repair</li>
+                    <li>Tap & Faucet Repair</li>
+                    <li>Bathroom Plumbing</li>
+                    <li>Water Tank Connections</li>
+                    <li>Drainage Repair</li>
+                    <li>New Pipe Installation</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Why Choose Us -->
+    <section class="why-us">
+
+        <div class="section-title">
+
+            <h2>Why Choose Akshaya Enterprises?</h2>
+
+            <p>
+                We aim to provide dependable service for every customer.
+            </p>
+
+        </div>
+
+
+        <div class="features">
+
+            <div class="feature">
+                <div class="feature-icon">👨‍🔧</div>
+                <h3>Experienced</h3>
+                <p>Skilled professionals for electrical and plumbing work.</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">⚡</div>
+                <h3>Reliable</h3>
+                <p>Solutions focused on quality and reliability.</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">⏰</div>
+                <h3>Quick Service</h3>
+                <p>We aim to respond to service requirements promptly.</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">👍</div>
+                <h3>Customer Focused</h3>
+                <p>Your satisfaction is important to us.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+
+        <div class="section-title">
+
+            <h2>Contact Us</h2>
+
+            <p>
+                Get in touch with Akshaya Enterprises
+            </p>
+
+        </div>
+
+
+        <div class="contact-container">
+
+            <!-- Contact Information -->
+            <div class="contact-info">
+
+                <h3>Get In Touch</h3>
+
+                <div class="contact-item">
+
+                    <strong>📞 Phone</strong>
+
+                    <a href="tel:+919999999999">
+                        +91 99999 99999
+                    </a>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <strong>💬 WhatsApp</strong>
+
+                    <a href="https://wa.me/919999999999">
+                        Chat with us on WhatsApp
+                    </a>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <strong>📧 Email</strong>
+
+                    <a href="mailto:info@akshayaenterprises.com">
+                        info@akshayaenterprises.com
+                    </a>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <strong>📍 Address</strong>
+
+                    <span>
+                        Your Address, Your City, Karnataka
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Contact Form -->
+            <div class="contact-form">
+
+                <h3>Request a Service</h3>
+
+                <form onsubmit="sendMessage(event)">
+
+                    <div class="form-group">
+
+                        <label>Name</label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            placeholder="Enter your name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>Phone Number</label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            placeholder="Enter your phone number"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>Service</label>
+
+                        <select id="service" required>
+
+                            <option value="">Select a service</option>
+
+                            <option value="Electrical Service">
+                                Electrical Service
+                            </option>
+
+                            <option value="Plumbing Service">
+                                Plumbing Service
+                            </option>
+
+                            <option value="Electrical & Plumbing">
+                                Electrical & Plumbing
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>Message</label>
+
+                        <textarea
+                            id="message"
+                            placeholder="Describe your requirement..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                    <button type="submit" class="submit-btn">
+                        Send Enquiry
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            © 2026 <span>Akshaya Enterprises</span>.
+            All Rights Reserved.
+        </p>
+
+        <p>
+            Electrical & Plumbing Services
+        </p>
+
+    </footer>
+
+
+    <!-- WhatsApp Button -->
+    <a
+        href="https://wa.me/919999999999"
+        class="whatsapp"
+        target="_blank"
+        title="Chat on WhatsApp"
+    >
+        💬
+    </a>
+
+
+    <script>
+
+        function sendMessage(event) {
+
+            event.preventDefault();
+
+            const name = document.getElementById("name").value;
+            const phone = document.getElementById("phone").value;
+            const service = document.getElementById("service").value;
+            const message = document.getElementById("message").value;
+
+            /*
+             * Replace 919999999999 with your actual
+             * WhatsApp number including country code.
+             */
+
+            const whatsappNumber = "919999999999";
+
+            const text =
+                "Hello Akshaya Enterprises,%0A%0A" +
+                "Name: " + encodeURIComponent(name) + "%0A" +
+                "Phone: " + encodeURIComponent(phone) + "%0A" +
+                "Service: " + encodeURIComponent(service) + "%0A" +
+                "Requirement: " + encodeURIComponent(message);
+
+            const whatsappURL =
+                "https://wa.me/" + whatsappNumber + "?text=" + text;
+
+            window.open(whatsappURL, "_blank");
+        }
+
+    </script>
+
+</body>
+</html>
